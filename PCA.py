@@ -10,7 +10,7 @@ print(df_train.columns)
 exclude_filter = ~df_train.columns.isin(['Unnamed: 0', 'Credit_Score'])
 
 pca = PCA().fit(df_train.loc[:, exclude_filter])
-plt.plot(np.cumsum(pca.explained_variance_ratio))
+plt.plot(np.cumsum(pca.explained_variance_ratio_))
 plt.xlabel('number of components')
 plt.ylabel('cumulative explained variance')
 plt.gcf().set_size_inches(3, 4)
