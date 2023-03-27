@@ -30,16 +30,17 @@ X_train, X_test, Y_train, Y_test = train_test_split(df_principal, df_train['Cred
 logReg = LogisticRegression(random_state = 64)
 logReg.fit(X = X_train, y = Y_train)
 predictY = logReg.predict(X_test)
-print(len(predictY))
+print("tekst")
+#print(len(predictY))
 cm = confusion_matrix(Y_test, predictY)
 cm_display = ConfusionMatrixDisplay(cm,display_labels=logReg.classes_).plot()
 cm_display.plot()
-plt.show()
+#plt.show()
 
 classRepo = classification_report(Y_test,predictY)
 print(classRepo)
 
-#Obliczanie
+#Obliczanie label 1
 TP = 2309
 FN = 3590
 FP = 1800
@@ -51,4 +52,5 @@ accuracy = (TP + TN+resztamacierzydolicznika)/(TP+TN+FP+FN+resztamacierzydomiano
 recall = TP/(TP+FN)
 precision = TP/(TP+FP)
 F1score = 2*((precision*recall)/(precision+recall))
+#tekst
 print(accuracy, recall, precision, F1score)
